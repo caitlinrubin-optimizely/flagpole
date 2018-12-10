@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flagpole Demo App</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <style type="text/css">
+      html {
+        background-image: url(<%= locationImageUrl %>);
+        background-size: cover;
+        height: 100vh;
+      }
+
+      h1 {
+        font-family: 'Pacifico', cursive;
+        font-size: 3em;
+        color: #fff;
+      }
+
+      h2 {
+        color: #fff;
+        font-size: 2em;
+      }
+
+      ul {
+        color: #fff;
+        font-size: 1em;
+        list-style: none;
+        margin: 2em 0;
+        padding: 2em;
+        border-radius: 1em;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      button {
+        font-size: 1em;
+        padding: 1em;
+      }
+
+      #page-container {
+        padding: 2em 0;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page-container">
+      <h1>Visit <%= locationName %></h1>
+      <h2>Amenities include:</h2>
+      <ul>
+        <%- amenities.map(a => `<li>${ a }</li>`).join('\n') %>
+      </ul>
+      <button type="button">Take a Trip ↗</button>
+    </div>
+  </body>
+</html>
