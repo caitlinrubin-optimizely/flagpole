@@ -1,2 +1,2 @@
 # flagpole
-isFeatureEnabled
+isFeatureEnabled('asdf')
