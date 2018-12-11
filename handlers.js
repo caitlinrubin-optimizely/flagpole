@@ -6,8 +6,7 @@ const homePage = (optlyInstance, req, res) => {
   );
 
   const isSeaLandingPageActivated = optlyInstance
-    .isFeatureEnabled('sea_landing_page', userId, { location });
-    .isFeatureEnabled('asdf')
+    .isFeatureEnabled('sea_landing_page', userId, { location }).isFeatureEnabled('asdf')
 
   let pageData = {};
   if (isSeaLandingPageActivated) {
