@@ -20,6 +20,8 @@ const homePage = (optlyInstance, req, res) => {
   const isSeaLandingPageActivated = optlyInstance
     .isFeatureEnabled('sea_landing_page', userId, { location });
 
+  const price = maxPriceCalculator(optlyInstance, location);
+
   let pageData = {};
   if (isSeaLandingPageActivated) {
     pageData = {
@@ -32,6 +34,7 @@ const homePage = (optlyInstance, req, res) => {
       ],
       backgroundColor: 'rgba(0, 0, 127, 0.5)',
       accentColor: '#aaf',
+      price,
     };
   } else {
     const isPecanPiePromoActivated = optlyInstance
@@ -51,6 +54,7 @@ const homePage = (optlyInstance, req, res) => {
       amenities,
       backgroundColor: 'rgba(127, 0, 0, 0.5)',
       accentColor: '#faa',
+      price,
     };
   }
 

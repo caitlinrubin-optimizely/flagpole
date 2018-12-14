@@ -62,6 +62,13 @@
         padding: 2em 0;
         text-align: center;
       }
+
+      small {
+        display: block;
+        color: #fff;
+        text-align: center;
+        margin-top: 1em;
+      }
     </style>
   </head>
   <body>
@@ -72,6 +79,7 @@
         <%- amenities.map(a => `<li><img src="${ a.src }" />${ a.text }</li>`).join('\n') %>
       </ul>
       <button type="button">Take a Trip ↗</button>
+      <small>Only <%= price %></small>
     </div>
   </body>
 </html>

@@ -1,9 +1,5 @@
-module.exports = (optlyInstance) => {
+module.exports = (optlyInstance, location) => {
   const userId = Math.round(Math.random() * 100).toString();
-
-  const location = (
-    ['land', 'sea'].includes(req.query.location) ? req.query.location : 'land'
-  );
 
   const normalLandPrice = 100;
   const normalSeaPrice = 250;
