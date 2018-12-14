@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Flagpole Demo App</title>
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto" rel="stylesheet">
     <style type="text/css">
       html {
         background-image: url(<%= locationImageUrl %>);
@@ -10,14 +10,22 @@
         height: 100vh;
       }
 
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-color: <%= backgroundColor %>;
+        margin: 0;
+        height: 100%;
+      }
+
       h1 {
         font-family: 'Pacifico', cursive;
-        font-size: 3em;
+        font-size: 4em;
         color: #fff;
+        margin-top: 200px;
       }
 
       h2 {
-        color: #fff;
+        color: <%= accentColor %>;
         font-size: 2em;
       }
 
@@ -28,7 +36,21 @@
         margin: 2em 0;
         padding: 2em;
         border-radius: 1em;
-        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      li {
+        text-align: center;
+        flex-grow: 0;
+        margin: 0 2em;
+      }
+
+      li img {
+        display: block;
+        width: 200px;
+        margin-bottom: 1em;
       }
 
       button {
@@ -47,7 +69,7 @@
       <h1>Visit <%= locationName %></h1>
       <h2>Amenities include:</h2>
       <ul>
-        <%- amenities.map(a => `<li>${ a }</li>`).join('\n') %>
+        <%- amenities.map(a => `<li><img src="${ a.src }" />${ a.text }</li>`).join('\n') %>
       </ul>
       <button type="button">Take a Trip ↗</button>
     </div>
